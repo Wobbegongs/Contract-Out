@@ -1,4 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { ReactDOM, render } from 'react-dom';
 import styles from './scss/styling.scss';
 
+render(<>, document.getElementById());
