@@ -6,7 +6,8 @@
   "scripts": {
     "test": "test",
     "start": "parcel ./index.html",
-    "dev": "parcel build ./index.html"
+    "dev": "parcel build ./index.html",
+    "server": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -28,7 +29,9 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
+    "ngrok": "^3.0.1",
     "nodemon": "^1.18.3",
     "parcel-bundler": "^1.9.7",
     "pg": "^7.4.3",
@@ -36,6 +39,7 @@
     "react-dom": "^16.4.2",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
+    "resolve-path": "^1.4.0",
     "twilio": "^3.19.2"
   }
 }
