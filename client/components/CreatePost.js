@@ -7,7 +7,21 @@ import {
   withRouter
 } from "react-router-dom";
 
-const CreatePost = withRouter(({ history }) => {
+import Task from './Task.js';
+
+const CreatePost = withRouter((props) => {
+  // array of task components to display on the /post route
+  const taskArr = [];
+  
+  // constructs the array of child <Task/> components
+  for (let i = 0; i < props.numChildren; i++) {
+    taskArr.push(<Task id={`task${i}`}/>);
+  }
+
+  function addPostAndSendSMSAndEmail() {
+    
+  }
+
   return (
     <div id="newPost">
       <form>
@@ -18,26 +32,19 @@ const CreatePost = withRouter(({ history }) => {
         <label htmlFor="location">Location: </label>
         <input type="text" placeholder="Add a location" name="location"/>
         <br></br>
-        <h3>Tasks: </h3>
-        <input type="number"/>
-        <input type="text"/>
-        <select>
-          <option>Caterer</option>
-          <option>Mover</option>
-          <option>Cleaner</option>
-          <option>Designer</option>
-          <option>Photographer</option>
-          <option>Greeter</option>
-          <option>Demolition</option>
-          <option>Painter</option>
-          <option>Gardener</option>
-          <option>Maintenance</option>
-        </select>
+        <div className="taskList">
+          <p>
+            Tasks:&ensp;
+            <button type="button" onClick={props.addTask}>Add task</button>
+            <button type="button" onClick={props.deleteTask}>Delete task</button>
+          </p>
+          {taskArr}
+        </div>
         <br></br>
         <label htmlFor="comments">Additional comments (optional): </label>
-        <textarea rows="4" cols="50" name="comments" placeholder="250 words max" maxLength="250"></textarea>
+        <textarea rows="4" cols="50" name="comments" placeholder="250 characters max" maxLength="250"></textarea>
         <br></br>
-        <button type="submit">Create post</button>
+        <button type="submit" onClick={addPostAndSendSMSAndEmail}>Create post</button>
       </form>
     </div>
   )

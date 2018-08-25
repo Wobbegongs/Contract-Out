@@ -14,6 +14,7 @@ app.use(express.static('dist'))
 app.use(bodyParser.json())
 
 app.post('/sendText', 
+
 //messageController.sendText,
 emailController.sendEmail,
  function(req, res) {
