@@ -10,7 +10,7 @@ const client = require('twilio')(accountSid, authToken);
 //middleware that sends a twilio text message
 messageController.sendText = (req, res, next) => {
   client.messages.create({
-  body: 'This is the ship that made the Kessel Run in fourteen parsecs?',
+  body: 'Hello',
   from: '+13236132041', //Twilio accounts phone number, you can request more.
   to: '+17736362712'
   })
