@@ -9,12 +9,16 @@ import {
 
 import Login from './Login.js';
 import Signup from './Signup.js';
+import Home from './Home.js';
+import CreatePost from './CreatePost.js';
 
 const AppContainer = () => (
   <Router>
     <div className="appContainer">
       <Route exact path="/" component={Login}/>
-      <Route path="/signup" component={Signup}/>
+      <Route exact path="/signup" component={Signup}/>
+      <Route exact path="/home" component={Home}/>
+      <Route exact path="/post" component={CreatePost}/>
     </div>
   </Router>
 )

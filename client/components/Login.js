@@ -7,9 +7,10 @@ import {
   withRouter
 } from "react-router-dom";
 
+
 const Login = withRouter(({ history }) => {
   return (
-    <div className="appContainer">
+    <div className="login">
       <h2>Login</h2>
       <form>
         <input type="text" placeholder="Username" name="uname"/>

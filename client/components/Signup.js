@@ -9,7 +9,7 @@ import {
 
 const Signup = withRouter(({ history }) => {
   return (
-    <div>
+    <div className="signup">
       <h2>Sign up</h2>
       <form>
         <input type="text" placeholder="Username" name="uname"/>
