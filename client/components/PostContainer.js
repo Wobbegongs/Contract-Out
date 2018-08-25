@@ -7,6 +7,10 @@ import {
   withRouter
 } from "react-router-dom";
 
+import PostInContainer from './PostInContainer';
+
+const axios = require('axios');
+
 /*
 Confirm properties of the post objects
 Stretch goal: Click to get more details on a post
@@ -15,6 +19,9 @@ Stretch goal: Click to get more details on a post
 class PostContainer extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      posts: [],
+    }
   }
 
   componentDidMount() {
@@ -23,8 +30,8 @@ class PostContainer extends Component {
 
   render() {
     return (
-      <div>
-      
+      <div className="postContainer">
+        <PostInContainer posts={this.state.posts}/>
       </div>
     )
   }

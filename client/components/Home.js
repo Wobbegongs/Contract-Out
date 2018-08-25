@@ -10,25 +10,15 @@ import {
 import NavContainer from './NavContainer.js';
 import PostContainer from './PostContainer.js';
 
-class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      // list of post objects from the Postgres database
-      posts: [],
-    };
-  }
-
-  render() {
-    return (
-      <Router>
-        <div className="home">
-          <NavContainer/>
-          <PostContainer posts={this.state.posts}/>
-        </div>
-      </Router>
-    )
-  }
+const Home = (props) => {
+  return (
+    <Router>
+      <div className="home">
+        <NavContainer/>
+        <PostContainer/>
+      </div>
+    </Router>
+  )
 }
 
 export default Home;
