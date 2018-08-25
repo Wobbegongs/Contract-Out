@@ -42,7 +42,13 @@ class AppContainer extends Component {
           <Route exact path="/" component={Login}/>
           <Route exact path="/signup" component={Signup}/>
           <Route exact path="/home" component={Home}/>
-          <Route exact path="/post" render={() => <CreatePost numChildren={this.state.numChildren} deleteTask={this.deleteTask} addTask={this.addTask}/>}/>
+          <Route exact path="/post" render={() => 
+            <CreatePost 
+              numChildren={this.state.numChildren} 
+              deleteTask={this.deleteTask} 
+              addTask={this.addTask}
+            />
+          }/>
         </div>
       </Router>
     )
