@@ -10,8 +10,10 @@ import {
 const NavContainer = withRouter(({ history }) => {
   return (
     <div>
-      <button type="button" onClick={() => {history.push('/post')}}>Create a Post</button>
-      <button type="button" onClick={() =>{history.push('/')}}>Log Out</button>
+      <form>
+        <button type="Submit" onClick={() => {history.push('/post')}}>Create a Post</button>
+        <button type="Submit" onClick={() =>{history.push('/')}}>Log Out</button>
+      </form> 
     </div>
   )
 });
