@@ -1,6 +1,7 @@
+require('dotenv').config();
 const messageController = {};
-const accountSid = 'ACfd9e7134b90283d091a1a92ec5ebf1eb'; //account number to the online phone number
-const authToken = '65e624ce3481b398e40b1db5b4719b20'; //24 hour authentication token, if this was production level it would be on our local hardDrive
+const accountSid = process.env.auth1 //account number to the online phone number
+const authToken = process.env.auth; //24 hour authentication token, if this was production level it would be on our local hardDrive
 const client = require('twilio')(accountSid, authToken);
 
 
