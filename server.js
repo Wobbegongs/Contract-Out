@@ -1,10 +1,17 @@
 const express = require('express');
 const app = express();
-const accountSid = 'ACfd9e7134b90283d091a1a92ec5ebf1eb';
-const authToken = 'your_auth_token';
-const client = require('twilio')(accountSid, authToken);
+const bodyParser = require('body-parser');
+const messageController = require('./server/messageController');
+
 
 app.use(express.static('dist'))
+app.use(bodyParser.json())
+
+app.post('/sendText', 
+messageController.sendText,
+
+function(req, res) {
+    res.send('hi')
 
 app.post('/sendText', function(req, res) {
 	client.messages.create({
