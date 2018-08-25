@@ -3,7 +3,10 @@ const app = express();
 const bodyParser = require('body-parser');
 const messageController = require('./server/messageController');
 const emailController = require('./server/emailController');
+const queries = require('./server/queries')
 const path = require('path')
+const db = require('./server/queries');
+
 
 
 
@@ -33,6 +36,18 @@ emailController.sendEmail,
 app.post('/userNamePassword', 
 
 )
+
+app.get('/api/workers', 
+  db.getListOfWorkers,
+); 
+//still need to insert route name
+app.get('', db.getIndividualWorkerInfo);
+
+app.post('', db.saveNewJob);
+
+app.post('', db.saveNewWorker);
+
+app.post('', db.saveLoginData);
 
 
 

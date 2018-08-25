@@ -21,5 +21,5 @@
 
 
 
-module.exports = loginController
+//module.exports = loginController
 
