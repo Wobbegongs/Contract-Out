@@ -3,6 +3,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const messageController = require('./server/messageController');
 const emailController = require('./server/emailController');
+require('dotenv').config()
+
 
 
 
