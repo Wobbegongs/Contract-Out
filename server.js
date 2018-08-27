@@ -2,13 +2,8 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const messageController = require('./server/messageController');
-const emailController = require('./server/emailController');
-const queries = require('./server/queries')
 const path = require('path')
 const db = require('./server/queries');
-
-
-
 
 require('dotenv').config()
 
@@ -19,7 +14,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname, './dist/index.html'), function(err) {
+  res.sendFile(path.join(__dirname, './dist/index.html'), function(err) {  //points to where parcel bundles our app
     if (err) {
       res.status(500).send(err)
     }
@@ -28,7 +23,7 @@ app.get('/*', function(req, res) {
 
 app.post('/sendText',
 messageController.sendText,
-emailController.sendEmail,
+//emailController.sendEmail,
   function(req, res) {
     res.send(console.log(req.body));
 });
@@ -37,10 +32,10 @@ app.post('/userNamePassword',
 
 )
 
-app.get('/api/workers', 
+app.post('/api/workers', 
   db.getListOfWorkers,
 ); 
-//still need to insert route name
+// List of queries to be written in quieries.js
 app.get('', db.getIndividualWorkerInfo);
 
 app.post('', db.saveNewJob);

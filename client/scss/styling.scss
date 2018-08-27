@@ -1,0 +1,38 @@
+* {
+    font-family: sans-serif;
+  }
+  .login{
+    display: block;
+    position: absolute;
+    border: solid 1px black;
+    border-radius: 4px;
+    width: 30%;
+    height: 25%;
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 12px;
+  }
+  .login h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .signup{
+    display: block;
+    position: absolute;
+    border: solid 1px black;
+    border-radius: 4px;
+    width: 30%;
+    height: 20%;
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }

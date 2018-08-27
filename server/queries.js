@@ -1,21 +1,6 @@
 //const promise = require();
 const pgp = require('pg-promise')(/*options*/);
-const db = pgp('postgres://hkbhestn:tcLWQlegNqQ3ruNKx_CfporyPyCNX3XE@elmer.db.elephantsql.com:5432/hkbhestn');
-
-/*
-const connection = require('./db-path.js')
-const pgp = require('pg-promise')(/*options);
-const db = pgp(connection);
-
-module.exports = db;
-*/
-
-// const postgresConnectionObject = { //layout of postgress login
-//     port: 5432,
-//     database: 'my-database-name',
-//     user: 'user-name',
-//     password: 'user-password'
-// };
+const db = pgp('postgres://hkbhestn:tcLWQlegNqQ3ruNKx_CfporyPyCNX3XE@elmer.db.elephantsql.com:5432/hkbhestn'); // Opens connection to postgres server
 
 function getListOfWorkers(req, res, next) {
     db.query('SELECT name, email, phone_number FROM subcontractor')
