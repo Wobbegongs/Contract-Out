@@ -9,12 +9,15 @@ const client = require('twilio')(accountSid, authToken);
 
 //middleware that sends a twilio text message
 messageController.sendText = (req, res, next) => {
-  client.messages.create({
-  body: 'Hello',
-  from: '+13236132041', //Twilio accounts phone number, you can request more.
-  to: '+17736362712'
+  const numberArr = [];
+  
+  codesmithNumberArr.forEach(function(ele){
+    client.messages.create({
+    body: 'hello, There is a job you may be interested in check your email for a link, because Twilio thinks I am a bot',
+    from: '+15202147880', //Twilio accounts phone number, you can request more.
+    to: ele
+    })
   })
-  .then(message => console.log('SMS message succesfully sent'))
   next();
 }
 

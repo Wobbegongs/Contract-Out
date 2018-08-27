@@ -58,6 +58,7 @@ const CreatePost = withRouter((props) => {
         </div>
         <br></br>
         <label htmlFor="comments">Additional comments (optional): </label>
+        <br></br>
         <textarea rows="4" cols="50" name="comments" placeholder="250 characters max" maxLength="250"></textarea>
         <br></br>
         <input type="submit" onClick={addPostAndSendSMSAndEmail} value="Create Post"/>
