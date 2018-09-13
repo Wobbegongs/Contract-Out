@@ -11,6 +11,9 @@ import Login from './Login.js';
 import Signup from './Signup.js';
 import Home from './Home.js';
 import CreatePost from './CreatePost.js';
+import serviceWorker from '../../serviceWorker.json'
+
+
 
 class AppContainer extends Component {
   constructor(props) {
@@ -21,6 +24,12 @@ class AppContainer extends Component {
     }
     this.addTask = this.addTask.bind(this);
     this.deleteTask = this.deleteTask.bind(this);
+  }
+  componentDidMount() {
+    console.log(serviceWorker)
+    // let serviceWorker2 = JSON.parse(serviceWorker)
+    localStorage.setItem("gry", serviceWorker);
+    
   }
 
   // increase the number of tasks that appear in the CreatePost component
